@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fortnite Listing Review Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Fortnite Listing Review Tool</h1>
+      <p>GitHub Pages-ready evidence formatter for pasted suspected account-sale listings.</p>
+    </div>
+    <button id="themeToggle" class="ghost">Toggle Theme</button>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <div class="section-title">
+        <h2>1. Paste listing text</h2>
+        <button id="clearInput" class="ghost small">Clear</button>
+      </div>
+
+      <textarea id="listingInput" spellcheck="false" placeholder="Paste a listing here, for example:
+
+Title: 5 Skins | OG Skull Trooper | Rust Lord | 2500 VB
+Seller: zerosugar
+Price: $401.77
+Skin Count: 5
+Email Changeable: no
+Country: FI
+Last Activity: 2024-09-13
+Link: https://lzt.market/244307015/"></textarea>
+
+      <div class="actions">
+        <button id="scanBtn">Scan & Generate Report</button>
+        <button id="copyReportBtn" class="secondary">Copy Report</button>
+        <button id="saveCaseBtn" class="secondary">Save Case</button>
+      </div>
+
+      <p class="hint">
+        GitHub Pages cannot run private API scans. This tool reviews text/URLs you paste and stores cases in your browser only.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>2. Watchlist</h2>
+        <button id="resetWatchlist" class="ghost small">Reset</button>
+      </div>
+
+      <div id="watchlist"></div>
+
+      <div class="inline-form">
+        <input id="newTerm" type="text" placeholder="Add term, e.g. purple skull" />
+        <button id="addTermBtn" class="secondary">Add</button>
+      </div>
+    </section>
+
+    <section class="card wide">
+      <div class="section-title">
+        <h2>3. Generated report</h2>
+        <span id="matchBadge" class="badge">No scan yet</span>
+      </div>
+
+      <pre id="reportOutput">Paste a listing and click “Scan & Generate Report”.</pre>
+    </section>
+
+    <section class="card wide">
+      <div class="section-title">
+        <h2>Saved cases</h2>
+        <div class="actions slim">
+          <button id="exportJsonBtn" class="secondary small">Export JSON</button>
+          <button id="exportCsvBtn" class="secondary small">Export CSV</button>
+          <button id="clearCasesBtn" class="danger small">Clear Cases</button>
+        </div>
+      </div>
+
+      <div id="cases"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Use neutral wording like “suspected account-sale violation” until reviewed.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
